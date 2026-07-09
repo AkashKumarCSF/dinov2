@@ -9,3 +9,4 @@ dist/
 *.swp
 
 .vscode/
+pretrained/dinov2_vitl14_pretrain.pth

@@ -11,7 +11,7 @@ import torch
 from torch.utils.data import Sampler
 
 from .datasets import ImageNet, ImageNet22k, HPAone, HPAFoV, CHAMMI_CP, CHAMMI_HPA, CHAMMI_WTC
-from .datasets.csf_dataset import CsfDataset
+from .datasets.csf_dataset import CSFDataset
 from .samplers import EpochSampler, InfiniteSampler, ShardedInfiniteSampler
 
 
@@ -94,6 +94,7 @@ def make_dataset(
     Returns:
         The created dataset.
     """
+    
     logger.info(f'using dataset: "{dataset_str}"')
 
     class_, kwargs = _parse_dataset_str(dataset_str)

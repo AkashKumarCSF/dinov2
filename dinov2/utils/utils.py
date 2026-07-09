@@ -81,7 +81,16 @@ class CosineScheduler(object):
         iters = np.arange(total_iters - warmup_iters - freeze_iters)
         schedule = final_value + 0.5 * (base_value - final_value) * (1 + np.cos(np.pi * iters / len(iters)))
         self.schedule = np.concatenate((freeze_schedule, warmup_schedule, schedule))
-
+        print(
+            "CosineScheduler DEBUG:",
+            "total_iters =", self.total_iters,
+            "freeze_iters =", freeze_iters,
+            "warmup_iters =", warmup_iters,
+            "freeze_len =", len(freeze_schedule),
+            "warmup_len =", len(warmup_schedule),
+            "cosine_len =", len(schedule),
+            "final_len =", len(self.schedule),
+        )
         assert len(self.schedule) == self.total_iters
 
     def __getitem__(self, it):

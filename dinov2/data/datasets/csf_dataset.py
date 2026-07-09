@@ -18,6 +18,7 @@ class CSFDataset(Dataset):
         self.target_transform = target_transform
 
         self.samples = []
+        #print("Root CSF dataset... ", self.root)
 
         valid_ext = (
             ".jpg",
@@ -51,7 +52,7 @@ class CSFDataset(Dataset):
     def __getitem__(self, index):
 
         path = self.samples[index]
-
+        #print("Loading image... ", path)
         image = Image.open(path).convert("RGB")
 
         if self.transform is not None:

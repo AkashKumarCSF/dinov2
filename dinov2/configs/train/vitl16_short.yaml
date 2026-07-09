@@ -1,6 +1,6 @@
 # this corresponds to the default config
 train:
-  dataset_path: CSF:root='dataset_path'
-  batch_size_per_gpu: 64
+  dataset_path: CSF:root='/home/administrator/Akash/datasets/CSF/'
+  batch_size_per_gpu: 32
 student:
   block_chunks: 4
